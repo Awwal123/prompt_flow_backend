@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Traits\HttpResponses;
 use App\Http\Requests\RegisterUserRequest;
@@ -49,12 +50,14 @@ class AuthController extends Controller
         ], 'Logged in successfully');
     }
 
-    public function logout($request)
-    {
-        $request->user()->currentAccessToken()->delete();
 
-        return $this->success(null, 'Logged out successfully');
-    }
+public function logout(Request $request)
+{
+    $request->user()->currentAccessToken()->delete();
+
+    return $this->success(null, 'Logged out successfully');
+}
+
 
     public function me($request)
     {

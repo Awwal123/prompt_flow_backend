@@ -35,4 +35,13 @@ return [
         ],
     ],
 
+ 'openai' => [
+    'key' => env('OPENAI_API_KEY'),
+],
+'google_ai' => [
+    'key' => env('GOOGLE_AI_KEY'),
+],
+
+
+
 ];
